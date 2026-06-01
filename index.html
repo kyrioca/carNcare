@@ -194,7 +194,7 @@ section{padding:80px 0}
 .value-item{display:flex;align-items:start;gap:12px;padding:16px;background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow)}
 .value-item svg{width:22px;height:22px;color:var(--sky);flex-shrink:0;margin-top:2px}
 .value-item span{font-size:.875rem;font-weight:600;color:var(--marine)}
-.about-image{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(135deg,#1a2e44,#2a4a6b);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.1)}
+.about-image{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(135deg,#1a2e44,#2a4a6b);position:relative}
 
 .stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px;text-align:center}
 .stat-item{padding:28px 16px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow)}
@@ -368,7 +368,7 @@ section{padding:80px 0}
 <!-- ═══ HEADER ═══ -->
 <header class="header" id="header">
   <div class="container header-inner">
-    <a href="#" class="logo" aria-label="carNcare Wash – Startseite">car<span>N</span>care</a>
+    <a href="#" class="logo" aria-label="carNcare Wash – Startseite"><img src="img/logo.jpg" alt="carNcare Wash Logo" style="height:40px;border-radius:6px;margin-right:8px">car<span>N</span>care</a>
     <nav class="nav-desktop" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="#preise">Preise</a>
@@ -427,9 +427,7 @@ section{padding:80px 0}
         </div>
       </div>
       <div class="hero-visual reveal" style="transition-delay:.15s">
-        <div class="hero-visual-inner">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2l2-3h10l2 3a2 2 0 012 2v6a2 2 0 01-2 2M7 17v2m10-2v2"/><circle cx="7.5" cy="12" r="1.5"/><circle cx="16.5" cy="12" r="1.5"/></svg>
-        </div>
+        <img src="img/ferrari-812.jpg" alt="Glänzender Ferrari 812 nach professioneller Außenreinigung bei carNcare Wash Jülich" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
       </div>
     </div>
   </div>
@@ -574,7 +572,7 @@ section{padding:80px 0}
         </div>
       </div>
       <div class="about-image reveal" style="transition-delay:.15s">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity=".15"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <img src="img/werkstatt-aussen.jpg" alt="Außenansicht der carNcare Wash Werkstatt in Jülich mit gepflegten Fahrzeugen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
       </div>
     </div>
     <div class="stats-strip reveal">
@@ -613,14 +611,18 @@ section{padding:80px 0}
       <p class="ba-caption">Lackpolitur · Mercedes E-Klasse</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item reveal" data-gallery="0">Außenwäsche</div>
-      <div class="gallery-item reveal" style="transition-delay:.05s" data-gallery="1">Innenraum</div>
-      <div class="gallery-item reveal" style="transition-delay:.1s" data-gallery="2">Felgen</div>
-      <div class="gallery-item reveal" style="transition-delay:.15s" data-gallery="3">Politur</div>
-      <div class="gallery-item reveal" style="transition-delay:.2s" data-gallery="4">Detail</div>
-      <div class="gallery-item reveal" style="transition-delay:.25s" data-gallery="5">Motorraum</div>
-      <div class="gallery-item reveal" style="transition-delay:.3s" data-gallery="6">Versiegelung</div>
-      <div class="gallery-item reveal" style="transition-delay:.35s" data-gallery="7">Ergebnis</div>
+      <div class="gallery-item reveal" data-gallery="0" data-caption="Bentley Continental · Außenreinigung"><img src="img/bentley-continental.jpg" alt="Bentley Continental nach Außenreinigung" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.05s" data-gallery="1" data-caption="Audi R8 · Komplettaufbereitung"><img src="img/audi-r8.jpg" alt="Audi R8 nach Komplettaufbereitung" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.1s" data-gallery="2" data-caption="Innenraum · Rückbank Reinigung"><img src="img/innenraum-rueckbank.jpg" alt="Saubere Rückbank nach Innenreinigung" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.15s" data-gallery="3" data-caption="VW Golf GTI · Außenwäsche"><img src="img/vw-golf-gti.jpg" alt="VW Golf GTI nach Außenwäsche" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.2s" data-gallery="4" data-caption="Dodge Challenger · Handwäsche"><img src="img/dodge-challenger.jpg" alt="Dodge Challenger nach Handwäsche" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.25s" data-gallery="5" data-caption="Mittelkonsole · Innenreinigung Detail"><img src="img/innenraum-mittelkonsole.jpg" alt="Saubere Mittelkonsole nach Innenreinigung" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.3s" data-gallery="6" data-caption="Kia Sorento · Glanz Wäsche"><img src="img/kia-sorento.jpg" alt="Kia Sorento nach Glanz Wäsche" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.35s" data-gallery="7" data-caption="Audi R8 · Heckansicht nach Politur"><img src="img/audi-r8-heck.jpg" alt="Audi R8 Heck nach Politur" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.4s" data-gallery="8" data-caption="Toyota GR86 · Komplettaufbereitung"><img src="img/toyota-gr86.jpg" alt="Toyota GR86 nach Aufbereitung" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.45s" data-gallery="9" data-caption="Kia e-Niro · Außenreinigung"><img src="img/kia-niro-ev.jpg" alt="Kia e-Niro nach Außenreinigung" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.5s" data-gallery="10" data-caption="Waschanlage · Professionelle Ausstattung"><img src="img/waschanlage.jpg" alt="Professionelle Waschanlage bei carNcare" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="gallery-item reveal" style="transition-delay:.55s" data-gallery="11" data-caption="Gebäude · carNcare Wash Jülich"><img src="img/gebaeude-aussen.jpg" alt="Außenansicht carNcare Wash Gebäude Jülich" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
   </div>
 </section>
@@ -630,7 +632,7 @@ section{padding:80px 0}
   <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
-  <div class="lightbox-content" id="lightboxContent">Bild-Platzhalter — hier erscheint das Foto</div>
+  <div class="lightbox-content" id="lightboxContent" style="padding:0;background:transparent;max-width:90vw;max-height:85vh"><img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:var(--radius)"><p id="lightboxCaption" style="text-align:center;color:rgba(255,255,255,.7);font-size:.85rem;margin-top:12px;padding:0 16px"></p></div>
 </div>
 
 <!-- BEWERTUNGEN -->
@@ -1187,9 +1189,16 @@ baSlider.addEventListener('pointerup', () => { isDragging = false; });
 /* ═══ GALLERY LIGHTBOX ═══ */
 const lightbox = document.getElementById('lightbox');
 const lightboxContent = document.getElementById('lightboxContent');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
 document.querySelectorAll('.gallery-item').forEach(item => {
   item.addEventListener('click', () => {
-    lightboxContent.textContent = 'Bild: ' + item.textContent + ' — Platzhalter für Foto';
+    const img = item.querySelector('img');
+    if (img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
+    lightboxCaption.textContent = item.dataset.caption || '';
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
