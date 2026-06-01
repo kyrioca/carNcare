@@ -125,7 +125,7 @@ section{padding:80px 0}
 .hero{padding-top:120px;padding-bottom:80px;background:var(--white);overflow:hidden}
 @media(min-width:768px){.hero{padding-top:140px;padding-bottom:100px}}
 .hero-grid{display:grid;gap:48px;align-items:center}
-@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr;gap:64px}}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr;max-width:680px}}
 .hero-caption{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:20px}
 .hero-title{font-size:clamp(2.5rem,6vw,4.25rem);font-weight:700;color:var(--marine);letter-spacing:-.025em;line-height:1.05;margin-bottom:24px}
 .hero-sub{font-size:1.1rem;color:var(--charcoal);opacity:.75;line-height:1.7;margin-bottom:36px;max-width:480px}
@@ -188,7 +188,7 @@ section{padding:80px 0}
 /* ═══ ABOUT ═══ */
 .about{background:var(--bg)}
 .about-grid{display:grid;gap:48px;align-items:center}
-@media(min-width:1024px){.about-grid{grid-template-columns:3fr 2fr;gap:72px}}
+@media(min-width:1024px){.about-grid{grid-template-columns:1fr;max-width:720px}}
 .about-text p{font-size:1rem;color:var(--charcoal);line-height:1.7;margin-bottom:16px;opacity:.8}
 .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
 .value-item{display:flex;align-items:start;gap:12px;padding:16px;background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow)}
@@ -426,9 +426,7 @@ section{padding:80px 0}
           <span>Ab 10 € · Seit 2006</span>
         </div>
       </div>
-      <div class="hero-visual reveal" style="transition-delay:.15s">
-        <img src="img/ferrari-812.jpg" alt="Glänzender Ferrari 812 nach professioneller Außenreinigung bei carNcare Wash Jülich" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-      </div>
+      <!-- Hero Visual entfernt auf Kundenwunsch -->
     </div>
   </div>
 </section>
@@ -571,9 +569,7 @@ section{padding:80px 0}
           </div>
         </div>
       </div>
-      <div class="about-image reveal" style="transition-delay:.15s">
-        <img src="img/werkstatt-aussen.jpg" alt="Außenansicht der carNcare Wash Werkstatt in Jülich mit gepflegten Fahrzeugen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-      </div>
+      <!-- About Image entfernt auf Kundenwunsch -->
     </div>
     <div class="stats-strip reveal">
       <div class="stat-item">
