@@ -640,31 +640,46 @@ section{padding:80px 0}
       <p class="section-caption">Kundenstimmen</p>
       <h2 class="section-title">Was unsere Kunden sagen.</h2>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Mein Auto sieht aus wie neu. Die Handwäsche und Politur waren absolut erstklassig. Man merkt, dass hier mit Liebe zum Detail gearbeitet wird."</p>
-        <div class="review-divider"></div>
-        <p class="review-author">— Thomas K.</p>
-        <p class="review-date">März 2026</p>
-      </div>
-      <div class="review-card reveal" style="transition-delay:.1s">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Super freundlich, faire Preise und ein Ergebnis, das sich wirklich sehen lassen kann. Ich komme definitiv wieder."</p>
-        <div class="review-divider"></div>
-        <p class="review-author">— Sarah M.</p>
-        <p class="review-date">Februar 2026</p>
-      </div>
-      <div class="review-card reveal" style="transition-delay:.2s">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Die Innenreinigung hat mich begeistert. Selbst hartnäckige Flecken auf den Polstern sind komplett verschwunden. Absolut empfehlenswert!"</p>
-        <div class="review-divider"></div>
-        <p class="review-author">— Michael R.</p>
-        <p class="review-date">Januar 2026</p>
+
+    <!-- Google Reviews Summary -->
+    <div class="google-review-header reveal" style="text-align:center;margin-bottom:40px">
+      <div style="display:inline-flex;align-items:center;gap:12px;background:var(--white);padding:16px 32px;border-radius:100px;box-shadow:var(--shadow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <span style="font-size:.9375rem;font-weight:600;color:var(--marine)">Google Bewertungen</span>
+        <span style="color:var(--gold);font-size:1rem;letter-spacing:1px">★★★★★</span>
+        <span id="googleRatingSummary" style="font-size:.85rem;color:var(--charcoal);opacity:.6">Bewertungen werden geladen…</span>
       </div>
     </div>
-    <div class="reviews-cta reveal">
-      <a href="https://g.page/carncare-juelich/review" target="_blank" rel="noopener noreferrer">Auf Google bewerten ↗</a>
+
+    <!-- Live Reviews Container -->
+    <div class="reviews-grid" id="googleReviewsGrid">
+      <!-- Reviews werden per JavaScript von Google geladen -->
+      <div class="review-card reveal" style="text-align:center;grid-column:1/-1;padding:48px">
+        <div style="color:var(--sky);margin-bottom:12px">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p style="font-size:.9375rem;color:var(--charcoal);opacity:.6" id="reviewsLoadingText">Google Bewertungen werden geladen…</p>
+      </div>
+    </div>
+
+    <div class="reviews-cta reveal" style="margin-top:32px">
+      <a href="https://search.google.com/local/reviews?placeid=PLACE_ID_HERE" target="_blank" rel="noopener noreferrer" id="googleReviewLink" style="display:inline-flex;align-items:center;gap:8px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Alle Google Bewertungen ansehen ↗
+      </a>
+      <p style="margin-top:16px">
+        <a href="https://search.google.com/local/writereview?placeid=PLACE_ID_HERE" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="writeReviewLink">Bewertung schreiben</a>
+      </p>
     </div>
   </div>
 </section>
@@ -1258,6 +1273,129 @@ function acceptCookies(level) {
 (function() {
   const d = document.getElementById('fdate');
   if (d) d.min = new Date().toISOString().split('T')[0];
+})();
+
+/* ═══ GOOGLE REVIEWS WIDGET ═══ */
+/*
+ * Dieses Widget nutzt die Google Places API (New), um echte
+ * Google-Bewertungen live auf der Website anzuzeigen.
+ *
+ * SETUP (einmalig nötig):
+ * 1. Gehe zu https://console.cloud.google.com
+ * 2. Erstelle ein Projekt (oder verwende ein bestehendes)
+ * 3. Aktiviere "Places API (New)"
+ * 4. Erstelle einen API-Key unter "Credentials"
+ * 5. Schränke den Key ein auf deine Domain (www.carncare.de)
+ * 6. Ersetze DEIN_API_KEY unten mit deinem echten Key
+ * 7. Finde deine Place ID: https://developers.google.com/maps/documentation/places/web-service/place-id
+ *    Suche nach "carNcare Wash Jülich" → kopiere die Place ID
+ * 8. Ersetze DEINE_PLACE_ID unten
+ */
+
+const GOOGLE_PLACES_CONFIG = {
+  apiKey: 'DEIN_API_KEY',          // ← Hier deinen Google API Key einsetzen
+  placeId: 'DEINE_PLACE_ID',       // ← Hier deine Google Place ID einsetzen
+  maxReviews: 5,
+  minRating: 1,
+  language: 'de'
+};
+
+(function() {
+  const grid = document.getElementById('googleReviewsGrid');
+  const summary = document.getElementById('googleRatingSummary');
+  const loadingText = document.getElementById('reviewsLoadingText');
+  const reviewLink = document.getElementById('googleReviewLink');
+  const writeLink = document.getElementById('writeReviewLink');
+
+  // Prüfe ob API Key konfiguriert ist
+  if (GOOGLE_PLACES_CONFIG.apiKey === 'DEIN_API_KEY' || GOOGLE_PLACES_CONFIG.placeId === 'DEINE_PLACE_ID') {
+    // Fallback: Zeige Hinweis und Link zu Google
+    grid.innerHTML = `
+      <div class="review-card reveal visible" style="grid-column:1/-1;text-align:center;padding:40px 24px">
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <span style="font-weight:700;font-size:1.1rem;color:var(--marine)">Google Bewertungen</span>
+        </div>
+        <p style="font-size:1rem;color:var(--charcoal);margin-bottom:20px">
+          Lesen Sie unsere echten Kundenbewertungen direkt bei Google.
+        </p>
+        <a href="https://www.google.com/search?q=carNcare+Wash+Jülich+Bewertungen" target="_blank" rel="noopener noreferrer" class="btn btn-marine" style="margin:0 auto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#fff"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#fff"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#fff"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#fff"/>
+          </svg>
+          Google Bewertungen ansehen
+        </a>
+      </div>
+    `;
+    summary.textContent = 'Bewertungen bei Google ansehen';
+    return;
+  }
+
+  // Wenn API Key vorhanden: Lade Reviews live von Google Places API
+  async function loadGoogleReviews() {
+    try {
+      const url = `https://places.googleapis.com/v1/places/${GOOGLE_PLACES_CONFIG.placeId}?fields=displayName,rating,userRatingCount,reviews&languageCode=${GOOGLE_PLACES_CONFIG.language}&key=${GOOGLE_PLACES_CONFIG.apiKey}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('API Fehler: ' + res.status);
+      const data = await res.json();
+
+      // Update summary
+      if (data.rating) {
+        const stars = '★'.repeat(Math.round(data.rating)) + '☆'.repeat(5 - Math.round(data.rating));
+        summary.textContent = `${data.rating} / 5 · ${data.userRatingCount || ''} Bewertungen`;
+      }
+
+      // Update review link
+      if (GOOGLE_PLACES_CONFIG.placeId) {
+        reviewLink.href = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACES_CONFIG.placeId}`;
+        writeLink.href = `https://search.google.com/local/writereview?placeid=${GOOGLE_PLACES_CONFIG.placeId}`;
+      }
+
+      // Render reviews
+      if (data.reviews && data.reviews.length > 0) {
+        const reviews = data.reviews
+          .filter(r => r.rating >= GOOGLE_PLACES_CONFIG.minRating)
+          .slice(0, GOOGLE_PLACES_CONFIG.maxReviews);
+
+        grid.innerHTML = reviews.map((r, i) => {
+          const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+          const date = r.relativePublishTimeDescription || '';
+          const text = r.text ? r.text.text : '';
+          const name = r.authorAttribution ? r.authorAttribution.displayName : 'Google Nutzer';
+          const photo = r.authorAttribution && r.authorAttribution.photoUri ? r.authorAttribution.photoUri : '';
+          const delay = i * 0.1;
+
+          return `
+            <div class="review-card reveal visible" style="transition-delay:${delay}s">
+              <div class="review-stars" style="color:var(--gold)">${stars}</div>
+              <p class="review-text">${text ? '„' + text + '"' : '<em>Bewertung ohne Text</em>'}</p>
+              <div class="review-divider"></div>
+              <div style="display:flex;align-items:center;gap:10px">
+                ${photo ? `<img src="${photo}" alt="${name}" style="width:32px;height:32px;border-radius:50%;object-fit:cover">` : ''}
+                <div>
+                  <p class="review-author">— ${name}</p>
+                  <p class="review-date">${date}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    } catch (err) {
+      console.warn('Google Reviews konnten nicht geladen werden:', err);
+      loadingText.textContent = 'Bewertungen konnten nicht geladen werden. Besuchen Sie uns direkt bei Google.';
+    }
+  }
+
+  loadGoogleReviews();
 })();
 </script>
 
